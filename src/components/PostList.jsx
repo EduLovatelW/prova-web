@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
-  List,
-  ListItem,
-  ListItemText,
   Container,
   Typography,
   CircularProgress,
+  List,
+  ListItemButton,
+  ListItemText,
   Paper,
 } from '@mui/material';
 
@@ -21,34 +21,30 @@ export default function PostList() {
       .finally(() => setLoading(false));
   }, []);
 
-  const handleClick = (id) => {
-    window.open(`/dados/${id}`, '_blank');
-  };
+  if (loading) return (
+    <Container sx={{ mt: 4, textAlign: 'center' }}>
+      <CircularProgress />
+    </Container>
+  );
 
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>Lista de Posts</Typography>
-      {loading ? (
-        <CircularProgress />
-      ) : (
-        <Paper>
-          <List>
-            {posts.map(post => (
-              <ListItem
-                button
-                key={post.id}
-                onClick={() => handleClick(post.id)}
-                divider
-              >
-                <ListItemText
-                  primary={post.title}
-                  secondary={`Post ID: ${post.id}`}
-                />
-              </ListItem>
-            ))}
-          </List>
-        </Paper>
-      )}
+      <Typography variant="h4" gutterBottom>Blog de Postagens</Typography>
+      <Paper>
+        <List>
+          {posts.map(post => (
+            <ListItemButton
+              key={post.id}
+              component="a"
+              href={`/dados/${post.id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ListItemText primary={post.title} />
+            </ListItemButton>
+          ))}
+        </List>
+      </Paper>
     </Container>
   );
 }
