@@ -1,12 +1,24 @@
-# React + Vite
+# 📄 Prova - Aplicação React com JSONPlaceholder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação desenvolvida com *ReactJS* que consome dados da API pública [JSONPlaceholder](https://jsonplaceholder.typicode.com/) e possui duas rotas principais.
 
-Currently, two official plugins are available:
+## ✅ Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Rota /post: exibe uma lista de posts obtidos da API.
+- Rota /dados/:id: exibe os detalhes do post selecionado ao clicar em "Ver detalhes".
+- Utiliza *Material UI (MUI)* para estilização.
+- Realiza requisições GET para buscar dados da API.
+- Design responsivo e visual agradável.
+- Navegação via React Router.
 
-## Expanding the ESLint configuration
+## 🔗 Acesse o Projeto Online
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [Clique aqui para acessar o deploy na Vercel](https://prova-web-puce.vercel.app)
+
+## 🧪 Tecnologias Usadas
+
+- ReactJS
+- Material UI (MUI)
+- Axios
+- React Router
+- Vite
